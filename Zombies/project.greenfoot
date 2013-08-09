@@ -1,0 +1,13 @@
+#Greenfoot properties
+#Fri Aug 09 09:46:49 PDT 2013
+class.Zombie.superclass=greenfoot.Actor
+class.Bee.superclass=greenfoot.Actor
+class.ZombieWorld.superclass=greenfoot.World
+class.Zombie.image=teddybear.png
+class.Bee.image=bee2.png
+class.ZombieHunter.image=tux.png
+class.ZombieWorld.image=space1.jpg
+version=2.5.0
+project.charset=UTF-8
+class.ZombieHunter.superclass=greenfoot.Actor
+world.lastInstantiated=ZombieWorld
