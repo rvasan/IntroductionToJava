@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Aug 09 09:46:49 PDT 2013
+#Fri Aug 09 11:54:47 PDT 2013
 class.Zombie.superclass=greenfoot.Actor
 class.Bee.superclass=greenfoot.Actor
 class.ZombieWorld.superclass=greenfoot.World
@@ -11,3 +11,4 @@ version=2.5.0
 project.charset=UTF-8
 class.ZombieHunter.superclass=greenfoot.Actor
 world.lastInstantiated=ZombieWorld
+class.GameOver.superclass=greenfoot.Actor

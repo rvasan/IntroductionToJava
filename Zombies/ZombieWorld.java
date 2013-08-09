@@ -25,9 +25,9 @@ public class ZombieWorld extends World
      */
     private void prepare()
     {
-        hunter1 = new ZombieHunter();
+        hunter1 = new ZombieHunter(1);
         addObject(hunter1, 300, 150);
-        hunter2 = new ZombieHunter();
+        hunter2 = new ZombieHunter(2);
         addObject(hunter2, 300, 450);
     }
 

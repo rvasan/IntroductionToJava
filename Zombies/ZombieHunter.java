@@ -9,28 +9,56 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ZombieHunter extends Actor
 {
     boolean facingLeft = false;
-    /**
-     * Act - do whatever the ZombieHunter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int playerNumber = 0;
+    int delay = 0;
+    public ZombieHunter(int player)
+    {
+        playerNumber = player;
+    }
+
     public void act() 
     {
         checkKeys();
         checkFireKey();
     } 
-    
+
     public void checkKeys()
     {
-        if (Greenfoot.isKeyDown("up"))
+        String upKey = "up";
+        if (playerNumber == 2) 
         {
-            setLocation(getX(), getY() - 5);
+            upKey = "w";
         }
-        
-        if (Greenfoot.isKeyDown("down"))
+
+        String downKey = "down";
+        if (playerNumber == 2)
+        {
+            downKey = "s";
+        }
+
+        String leftKey = "left";
+        if (playerNumber == 2)
+        {
+            leftKey = "a";
+        }
+
+        String rightKey = "right";
+        if (playerNumber == 2)
+        {
+            rightKey = "d";
+        }
+
+        if (Greenfoot.isKeyDown(upKey))
         {
             setLocation(getX(), getY() + 5);
         }
-        if(Greenfoot.isKeyDown("left"))
+
+        if (Greenfoot.isKeyDown(downKey))
+        {
+            setLocation(getX(), getY() + 5);
+        }
+
+        if(Greenfoot.isKeyDown(leftKey))
         {
             if (facingLeft)
             {
@@ -42,7 +70,8 @@ public class ZombieHunter extends Actor
                 facingLeft = true;
             }
         }
-         if(Greenfoot.isKeyDown("right"))
+
+        if(Greenfoot.isKeyDown(rightKey))
         {
             if (facingLeft)
             {
@@ -55,16 +84,29 @@ public class ZombieHunter extends Actor
             }
         }
     }
+
     public void checkFireKey()
     {
-        if ("space".equals(Greenfoot.getKey()))
+        if (delay > 0)
+        {
+            delay = delay - 1;
+        }
+
+        String fireKey = "space";
+        if (playerNumber == 2)
+        {
+            fireKey = "q";
+        }
+
+        if (Greenfoot.isKeyDown(fireKey) && delay == 0)
         {
             fireBullet();
         }
-    }
-    
+    }   
+
     public void fireBullet()
     {
+        delay = 25;
         Bee bee = new Bee();
         getWorld().addObject(bee, getX(), getY());
         if (facingLeft)
